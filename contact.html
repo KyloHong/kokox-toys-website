@@ -97,34 +97,30 @@
 
         <div class="contact-form">
           <h3 style="font-size:1.25rem;font-weight:700;margin-bottom:1.5rem;">在线咨询</h3>
-          <form id="contactForm" action="https://formspree.io/f/xwpkvqgy" method="POST">
-            <!-- Formspree 配置：收到邮件通知 + 后台查看提交记录 -->
-            <input type="hidden" name="_subject" value="KOKOX TOYS 官网 - 新的合作咨询">
-            <input type="hidden" name="_next" value="">
-            <input type="text" name="_gotcha" style="display:none">
+          <form id="contactForm" onsubmit="handleFormSubmit(event)">
             <div class="form-row">
               <div class="form-group">
                 <label for="name">您的姓名 *</label>
-                <input type="text" id="name" name="name" placeholder="请输入姓名" required>
+                <input type="text" id="name" placeholder="请输入姓名" required>
               </div>
               <div class="form-group">
                 <label for="company">公司名称</label>
-                <input type="text" id="company" name="公司名称" placeholder="请输入公司名称">
+                <input type="text" id="company" placeholder="请输入公司名称">
               </div>
             </div>
             <div class="form-row">
               <div class="form-group">
                 <label for="phone">联系电话 *</label>
-                <input type="tel" id="phone" name="联系电话" placeholder="请输入电话号码" required>
+                <input type="tel" id="phone" placeholder="请输入电话号码" required>
               </div>
               <div class="form-group">
                 <label for="wechat">微信号</label>
-                <input type="text" id="wechat" name="微信号" placeholder="请输入微信号">
+                <input type="text" id="wechat" placeholder="请输入微信号">
               </div>
             </div>
             <div class="form-group">
               <label for="identity">您的身份</label>
-              <select id="identity" name="身份类型">
+              <select id="identity">
                 <option value="">请选择（可选）</option>
                 <option value="IP品牌方">IP品牌方</option>
                 <option value="跨境电商卖家">跨境电商卖家</option>
@@ -135,7 +131,7 @@
             </div>
             <div class="form-group">
               <label for="service">感兴趣的合作类型</label>
-              <select id="service" name="合作类型">
+              <select id="service">
                 <option value="">请选择合作类型</option>
                 <option value="B2B供货合作">B2B供货合作</option>
                 <option value="IP授权合作">IP授权合作</option>
@@ -148,15 +144,23 @@
             </div>
             <div class="form-group">
               <label for="message">合作需求描述 *</label>
-              <textarea id="message" name="需求描述" placeholder="请描述您的具体需求，如感兴趣的IP/品类、目标市场、预计合作规模等" required></textarea>
+              <textarea id="message" placeholder="请描述您的具体需求，如感兴趣的IP/品类、目标市场、预计合作规模等" required></textarea>
             </div>
             <button type="submit" class="btn btn-primary form-submit">提交咨询 →</button>
           </form>
           <div id="formSuccess" style="display:none;text-align:center;padding:2rem 0;">
             <div style="font-size:3rem;margin-bottom:1rem;">✅</div>
-            <h3 style="margin-bottom:0.5rem;">提交成功！</h3>
-            <p style="color:var(--gray);">感谢您的咨询，我们将在24小时内与您联系。</p>
+            <h3 style="margin-bottom:0.5rem;">正在打开邮箱...</h3>
+            <p style="color:var(--gray);">邮件客户端已打开，点击发送即可完成咨询。</p>
+            <p style="color:var(--gray);margin-top:0.5rem;">如果没有自动打开，请手动发送邮件至：<br><strong>amiee.w@kokoxtoys.com</strong></p>
             <p style="color:var(--gray);margin-top:0.5rem;">紧急事务请直接致电：<strong>17600294377（Amiee.W）</strong></p>
+          </div>
+          <div id="formFallback" style="display:none;text-align:center;padding:2rem 0;">
+            <div style="font-size:3rem;margin-bottom:1rem;">📧</div>
+            <h3 style="margin-bottom:0.5rem;">请发送邮件联系我们</h3>
+            <p style="color:var(--gray);margin-bottom:1rem;">您的设备未检测到邮箱客户端，请通过以下方式联系我们：</p>
+            <a href="mailto:amiee.w@kokoxtoys.com?subject=KOKOX%20TOYS%20-%20%E5%90%88%E4%BD%9C%E5%92%A8%E8%AF%A2" class="btn btn-primary" style="display:inline-block;">打开邮箱应用 →</a>
+            <p style="color:var(--gray);margin-top:1.5rem;font-size:0.9rem;">或直接致电：<strong>17600294377（Amiee.W）</strong></p>
           </div>
         </div>
       </div>
@@ -299,22 +303,53 @@
       navLinks.classList.toggle('active');
     });
 
-    // 表单提交后显示成功提示
-    const form = document.getElementById('contactForm');
-    const success = document.getElementById('formSuccess');
+    // 表单提交 → 打开邮箱客户端发送邮件
+    function handleFormSubmit(e) {
+      e.preventDefault();
 
-    // 检查 URL 参数，Formspree 回跳时会带上 ?submitted=true
-    if (window.location.search.includes('submitted=true')) {
-      form.style.display = 'none';
-      success.style.display = 'block';
-      // 清除 URL 参数
-      window.history.replaceState({}, '', window.location.pathname);
+      const name = document.getElementById('name').value.trim();
+      const company = document.getElementById('company').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const wechat = document.getElementById('wechat').value.trim();
+      const identity = document.getElementById('identity').value;
+      const service = document.getElementById('service').value;
+      const message = document.getElementById('message').value.trim();
+
+      // 组装邮件内容
+      let body = '';
+      body += '【KOKOX TOYS 官网 - 新的合作咨询】\n\n';
+      body += '姓名：' + name + '\n';
+      if (company) body += '公司：' + company + '\n';
+      body += '电话：' + phone + '\n';
+      if (wechat) body += '微信：' + wechat + '\n';
+      if (identity) body += '身份：' + identity + '\n';
+      if (service) body += '合作类型：' + service + '\n';
+      body += '\n需求描述：\n' + message;
+
+      const subject = 'KOKOX TOYS 合作咨询 - ' + name;
+      const mailto = 'mailto:amiee.w@kokoxtoys.com'
+        + '?subject=' + encodeURIComponent(subject)
+        + '&body=' + encodeURIComponent(body);
+
+      // 尝试打开邮箱客户端
+      const form = document.getElementById('contactForm');
+      const success = document.getElementById('formSuccess');
+      const fallback = document.getElementById('formFallback');
+
+      const newWindow = window.open(mailto, '_blank');
+
+      // 检测是否成功打开邮箱客户端
+      setTimeout(function() {
+        if (newWindow && !newWindow.closed) {
+          form.style.display = 'none';
+          success.style.display = 'block';
+        } else {
+          // 邮箱客户端未打开，显示备用方案
+          form.style.display = 'none';
+          fallback.style.display = 'block';
+        }
+      }, 1000);
     }
-
-    // 设置 Formspree 回跳地址为当前页面 + submitted=true
-    const nextUrl = window.location.origin + window.location.pathname + '?submitted=true';
-    const nextInput = form.querySelector('input[name="_next"]');
-    if (nextInput) nextInput.value = nextUrl;
   </script>
 </body>
 </html>
