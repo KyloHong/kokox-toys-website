@@ -1233,6 +1233,56 @@ body {
   line-height: 1.7;
 }
 
+/* ===== Horizontal Scroll Wrapper ===== */
+.scroll-container {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent) var(--border);
+}
+
+.scroll-container::-webkit-scrollbar {
+  height: 4px;
+}
+
+.scroll-container::-webkit-scrollbar-track {
+  background: var(--border);
+  border-radius: 2px;
+}
+
+.scroll-container::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 2px;
+}
+
+.scroll-container .products-grid {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 1rem;
+}
+
+.scroll-container .products-grid .product-card {
+  flex: 0 0 85vw;
+  max-width: 340px;
+  scroll-snap-align: start;
+}
+
+/* 桌面端恢复正常 grid 布局 */
+@media (min-width: 769px) {
+  .scroll-container {
+    overflow-x: visible;
+  }
+  .scroll-container .products-grid {
+    display: grid;
+    flex-wrap: unset;
+  }
+  .scroll-container .products-grid .product-card {
+    flex: unset;
+    max-width: unset;
+  }
+}
+
 /* ===== Responsive ===== */
 @media (max-width: 1024px) {
   .hero-container {
@@ -1328,8 +1378,20 @@ body {
   }
   
   .services-grid,
-  .products-grid,
   .values-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  /* 业务矩阵：移动端改为横向滑动 */
+  .scroll-container {
+    display: block;
+  }
+  
+  .scroll-container .products-grid {
+    display: flex;
+  }
+  
+  .products-grid:not(.scroll-container .products-grid) {
     grid-template-columns: 1fr;
   }
   
