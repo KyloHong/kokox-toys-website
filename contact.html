@@ -97,11 +97,11 @@
 
         <div class="contact-form">
           <h3 style="font-size:1.25rem;font-weight:700;margin-bottom:1.5rem;">在线咨询</h3>
-          <form id="contactForm" action="https://formspree.io/f/xwpkvqgy" method="POST">
-            <!-- Formspree 配置：收到邮件通知 + 后台查看提交记录 -->
-            <input type="hidden" name="_subject" value="KOKOX TOYS 官网 - 新的合作咨询">
-            <input type="hidden" name="_next" value="">
-            <input type="text" name="_gotcha" style="display:none">
+          <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="373d7757-b5d4-4df8-83a9-b6d79f3f857d">
+            <input type="hidden" name="subject" value="KOKOX TOYS 官网 - 新的合作咨询">
+            <input type="hidden" name="from_name" value="KOKOX TOYS 官网">
+            <input type="checkbox" name="botcheck" style="display:none">
             <div class="form-row">
               <div class="form-group">
                 <label for="name">您的姓名 *</label>
@@ -150,7 +150,7 @@
               <label for="message">合作需求描述 *</label>
               <textarea id="message" name="需求描述" placeholder="请描述您的具体需求，如感兴趣的IP/品类、目标市场、预计合作规模等" required></textarea>
             </div>
-            <button type="submit" class="btn btn-primary form-submit">提交咨询 →</button>
+            <button type="submit" id="submitBtn" class="btn btn-primary form-submit">提交咨询 →</button>
           </form>
           <div id="formSuccess" style="display:none;text-align:center;padding:2rem 0;">
             <div style="font-size:3rem;margin-bottom:1rem;">✅</div>
@@ -299,22 +299,33 @@
       navLinks.classList.toggle('active');
     });
 
-    // 表单提交后显示成功提示
+    // AJAX 表单提交 → 自动发邮件，用户无感
     const form = document.getElementById('contactForm');
     const success = document.getElementById('formSuccess');
+    const submitBtn = document.getElementById('submitBtn');
 
-    // 检查 URL 参数，Formspree 回跳时会带上 ?submitted=true
-    if (window.location.search.includes('submitted=true')) {
-      form.style.display = 'none';
-      success.style.display = 'block';
-      // 清除 URL 参数
-      window.history.replaceState({}, '', window.location.pathname);
-    }
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      submitBtn.disabled = true;
+      submitBtn.textContent = '提交中...';
 
-    // 设置 Formspree 回跳地址为当前页面 + submitted=true
-    const nextUrl = window.location.origin + window.location.pathname + '?submitted=true';
-    const nextInput = form.querySelector('input[name="_next"]');
-    if (nextInput) nextInput.value = nextUrl;
+      const formData = new FormData(form);
+
+      fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formData
+      })
+      .then(res => res.json())
+      .then(data => {
+        form.style.display = 'none';
+        success.style.display = 'block';
+      })
+      .catch(() => {
+        alert('提交失败，请稍后重试或直接致电 17600294377（Amiee.W）');
+        submitBtn.disabled = false;
+        submitBtn.textContent = '提交咨询 →';
+      });
+    });
   </script>
 </body>
 </html>
