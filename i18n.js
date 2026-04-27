@@ -235,6 +235,7 @@ const I18N = {
   'contact_name': { zh: '商务联系人', en: 'Business Contact', es: 'Contacto Comercial' },
   'contact_phone': { zh: '联系电话', en: 'Phone', es: 'Teléfono' },
   'contact_phone_note': { zh: '欢迎来电咨询合作事宜', en: 'Feel free to call for partnership inquiries', es: 'Llámenos para consultas de cooperación' },
+  'contact_email': { zh: '工作邮箱', en: 'Email', es: 'Correo Electrónico' },
   'contact_company': { zh: '公司名称', en: 'Company', es: 'Empresa' },
   'contact_brand': { zh: '品牌名称', en: 'Brand', es: 'Marca' },
   'contact_brand_desc': { zh: '专注潮玩IP全球商业化', en: 'Global Art Toy IP Commercialization', es: 'Comercialización IP Global' },
