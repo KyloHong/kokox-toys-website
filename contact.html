@@ -109,22 +109,22 @@
               </div>
               <div class="form-group">
                 <label for="company">公司名称</label>
-                <input type="text" id="company" name="公司名称" placeholder="请输入公司名称">
+                <input type="text" id="company" name="company" placeholder="请输入公司名称">
               </div>
             </div>
             <div class="form-row">
               <div class="form-group">
                 <label for="phone">联系电话 *</label>
-                <input type="tel" id="phone" name="联系电话" placeholder="请输入电话号码" required>
+                <input type="tel" id="phone" name="phone" placeholder="请输入电话号码" required>
               </div>
               <div class="form-group">
                 <label for="wechat">微信号</label>
-                <input type="text" id="wechat" name="微信号" placeholder="请输入微信号">
+                <input type="text" id="wechat" name="wechat" placeholder="请输入微信号">
               </div>
             </div>
             <div class="form-group">
               <label for="identity">您的身份</label>
-              <select id="identity" name="身份类型">
+              <select id="identity" name="identity">
                 <option value="">请选择（可选）</option>
                 <option value="IP品牌方">IP品牌方</option>
                 <option value="跨境电商卖家">跨境电商卖家</option>
@@ -135,7 +135,7 @@
             </div>
             <div class="form-group">
               <label for="service">感兴趣的合作类型</label>
-              <select id="service" name="合作类型">
+              <select id="service" name="service">
                 <option value="">请选择合作类型</option>
                 <option value="B2B供货合作">B2B供货合作</option>
                 <option value="IP授权合作">IP授权合作</option>
@@ -148,7 +148,7 @@
             </div>
             <div class="form-group">
               <label for="message">合作需求描述 *</label>
-              <textarea id="message" name="需求描述" placeholder="请描述您的具体需求，如感兴趣的IP/品类、目标市场、预计合作规模等" required></textarea>
+              <textarea id="message" name="message" placeholder="请描述您的具体需求，如感兴趣的IP/品类、目标市场、预计合作规模等" required></textarea>
             </div>
             <button type="submit" id="submitBtn" class="btn btn-primary form-submit">提交咨询 →</button>
           </form>
@@ -309,7 +309,28 @@
       submitBtn.disabled = true;
       submitBtn.textContent = '提交中...';
 
-      const formData = new FormData(form);
+      const name = document.getElementById('name').value.trim();
+      const company = document.getElementById('company').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const wechat = document.getElementById('wechat').value.trim();
+      const identity = document.getElementById('identity').value;
+      const service = document.getElementById('service').value;
+      const message = document.getElementById('message').value.trim();
+
+      // 组装中文邮件内容，避免字段名乱码
+      let body = '姓名：' + name + '\n';
+      if (company) body += '公司名称：' + company + '\n';
+      body += '联系电话：' + phone + '\n';
+      if (wechat) body += '微信号：' + wechat + '\n';
+      if (identity) body += '身份类型：' + identity + '\n';
+      if (service) body += '合作类型：' + service + '\n';
+      body += '需求描述：\n' + message;
+
+      const formData = new FormData();
+      formData.append('access_key', '373d7757-b5d4-4df8-83a9-b6d79f3f857d');
+      formData.append('subject', 'KOKOX TOYS 官网 - 合作咨询（' + name + '）');
+      formData.append('from_name', 'KOKOX TOYS 官网');
+      formData.append('message', body);
 
       fetch('https://api.web3forms.com/submit', {
         method: 'POST',
