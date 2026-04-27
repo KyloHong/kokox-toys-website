@@ -307,7 +307,7 @@ const I18N = {
   'footer_biz2': { zh: '影视动漫周边', en: 'Entertainment Merchandise', es: 'Merchandise Entretenimiento' },
   'footer_biz3': { zh: 'IP授权与定制', en: 'IP Licensing', es: 'Licenciamiento IP' },
   'footer_biz4': { zh: '出海营销', en: 'Global Marketing', es: 'Marketing Global' },
-  'footer_city': { zh: '深圳市', en: 'Shenzhen, China', es: 'Shenzhen, China' },
+  'footer_city': { zh: '深圳市龙岗区天安云谷', en: 'Tian\'an Cloud Park, Longgang, Shenzhen', es: 'Parque Cloud Tian\'an, Longgang, Shenzhen' },
 };
 
 // ============ 语言切换引擎 ============
