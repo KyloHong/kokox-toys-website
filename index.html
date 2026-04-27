@@ -21,18 +21,18 @@
         <li><a href="about.html" data-i18n="nav_about">关于我们</a></li>
         <li><a href="products.html" data-i18n="nav_products">产品服务</a></li>
         <li><a href="contact.html" class="nav-cta" data-i18n="nav_contact">联系我们</a></li>
+        <li class="lang-switcher">
+          <button class="lang-toggle" onclick="toggleLangDropdown()" aria-label="切换语言">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            <span class="lang-current">中文</span>
+          </button>
+          <div class="lang-dropdown">
+            <button class="lang-btn" data-lang="zh">中文</button>
+            <button class="lang-btn" data-lang="en">English</button>
+            <button class="lang-btn" data-lang="es">Español</button>
+          </div>
+        </li>
       </ul>
-      <div class="lang-switcher">
-        <button class="lang-toggle" onclick="toggleLangDropdown()">
-          <span class="lang-current">中文</span>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-        </button>
-        <div class="lang-dropdown">
-          <button class="lang-btn" data-lang="zh">中文</button>
-          <button class="lang-btn" data-lang="en">English</button>
-          <button class="lang-btn" data-lang="es">Español</button>
-        </div>
-      </div>
       <button class="nav-toggle" id="navToggle" aria-label="菜单">
         <span></span>
         <span></span>
