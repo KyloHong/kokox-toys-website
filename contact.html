@@ -97,54 +97,58 @@
 
         <div class="contact-form">
           <h3 style="font-size:1.25rem;font-weight:700;margin-bottom:1.5rem;">在线咨询</h3>
-          <form id="contactForm" onsubmit="handleSubmit(event)">
+          <form id="contactForm" action="https://formspree.io/f/xwpkvqgy" method="POST">
+            <!-- Formspree 配置：收到邮件通知 + 后台查看提交记录 -->
+            <input type="hidden" name="_subject" value="KOKOX TOYS 官网 - 新的合作咨询">
+            <input type="hidden" name="_next" value="">
+            <input type="text" name="_gotcha" style="display:none">
             <div class="form-row">
               <div class="form-group">
                 <label for="name">您的姓名 *</label>
-                <input type="text" id="name" placeholder="请输入姓名" required>
+                <input type="text" id="name" name="name" placeholder="请输入姓名" required>
               </div>
               <div class="form-group">
                 <label for="company">公司名称</label>
-                <input type="text" id="company" placeholder="请输入公司名称">
+                <input type="text" id="company" name="公司名称" placeholder="请输入公司名称">
               </div>
             </div>
             <div class="form-row">
               <div class="form-group">
                 <label for="phone">联系电话 *</label>
-                <input type="tel" id="phone" placeholder="请输入电话号码" required>
+                <input type="tel" id="phone" name="联系电话" placeholder="请输入电话号码" required>
               </div>
               <div class="form-group">
                 <label for="wechat">微信号</label>
-                <input type="text" id="wechat" placeholder="请输入微信号">
+                <input type="text" id="wechat" name="微信号" placeholder="请输入微信号">
               </div>
             </div>
             <div class="form-group">
               <label for="identity">您的身份</label>
-              <select id="identity">
+              <select id="identity" name="身份类型">
                 <option value="">请选择（可选）</option>
-                <option value="brand">IP品牌方</option>
-                <option value="seller">跨境电商卖家</option>
-                <option value="channel">渠道商/分销商</option>
-                <option value="platform">电商平台商家</option>
-                <option value="other">其他</option>
+                <option value="IP品牌方">IP品牌方</option>
+                <option value="跨境电商卖家">跨境电商卖家</option>
+                <option value="渠道商/分销商">渠道商/分销商</option>
+                <option value="电商平台商家">电商平台商家</option>
+                <option value="其他">其他</option>
               </select>
             </div>
             <div class="form-group">
               <label for="service">感兴趣的合作类型</label>
-              <select id="service">
+              <select id="service" name="合作类型">
                 <option value="">请选择合作类型</option>
-                <option value="b2b">B2B供货合作</option>
-                <option value="ip">IP授权合作</option>
-                <option value="blindbox">盲盒/谷子/卡牌产品</option>
-                <option value="ai">AI玩具产品</option>
-                <option value="custom">IP定制解决方案</option>
-                <option value="marketing">出海营销合作</option>
-                <option value="all">全品类合作</option>
+                <option value="B2B供货合作">B2B供货合作</option>
+                <option value="IP授权合作">IP授权合作</option>
+                <option value="盲盒/谷子/卡牌产品">盲盒/谷子/卡牌产品</option>
+                <option value="AI玩具产品">AI玩具产品</option>
+                <option value="IP定制解决方案">IP定制解决方案</option>
+                <option value="出海营销合作">出海营销合作</option>
+                <option value="全品类合作">全品类合作</option>
               </select>
             </div>
             <div class="form-group">
               <label for="message">合作需求描述 *</label>
-              <textarea id="message" placeholder="请描述您的具体需求，如感兴趣的IP/品类、目标市场、预计合作规模等" required></textarea>
+              <textarea id="message" name="需求描述" placeholder="请描述您的具体需求，如感兴趣的IP/品类、目标市场、预计合作规模等" required></textarea>
             </div>
             <button type="submit" class="btn btn-primary form-submit">提交咨询 →</button>
           </form>
@@ -295,13 +299,22 @@
       navLinks.classList.toggle('active');
     });
 
-    function handleSubmit(e) {
-      e.preventDefault();
-      const form = document.getElementById('contactForm');
-      const success = document.getElementById('formSuccess');
+    // 表单提交后显示成功提示
+    const form = document.getElementById('contactForm');
+    const success = document.getElementById('formSuccess');
+
+    // 检查 URL 参数，Formspree 回跳时会带上 ?submitted=true
+    if (window.location.search.includes('submitted=true')) {
       form.style.display = 'none';
       success.style.display = 'block';
+      // 清除 URL 参数
+      window.history.replaceState({}, '', window.location.pathname);
     }
+
+    // 设置 Formspree 回跳地址为当前页面 + submitted=true
+    const nextUrl = window.location.origin + window.location.pathname + '?submitted=true';
+    const nextInput = form.querySelector('input[name="_next"]');
+    if (nextInput) nextInput.value = nextUrl;
   </script>
 </body>
 </html>
