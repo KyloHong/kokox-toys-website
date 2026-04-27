@@ -17,11 +17,22 @@
         <div class="nav-logo-text">KOKOX <span>TOYS</span></div>
       </a>
       <ul class="nav-links" id="navLinks">
-        <li><a href="index.html" class="active">首页</a></li>
-        <li><a href="about.html">关于我们</a></li>
-        <li><a href="products.html">产品服务</a></li>
-        <li><a href="contact.html" class="nav-cta">联系我们</a></li>
+        <li><a href="index.html" class="active" data-i18n="nav_home">首页</a></li>
+        <li><a href="about.html" data-i18n="nav_about">关于我们</a></li>
+        <li><a href="products.html" data-i18n="nav_products">产品服务</a></li>
+        <li><a href="contact.html" class="nav-cta" data-i18n="nav_contact">联系我们</a></li>
       </ul>
+      <div class="lang-switcher">
+        <button class="lang-toggle" onclick="toggleLangDropdown()">
+          <span class="lang-current">中文</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="lang-dropdown">
+          <button class="lang-btn" data-lang="zh">中文</button>
+          <button class="lang-btn" data-lang="en">English</button>
+          <button class="lang-btn" data-lang="es">Español</button>
+        </div>
+      </div>
       <button class="nav-toggle" id="navToggle" aria-label="菜单">
         <span></span>
         <span></span>
@@ -39,24 +50,24 @@
     </div>
     <div class="hero-container">
       <div class="hero-content">
-        <h1>专注潮玩IP<br><span class="highlight">全球商业化</span></h1>
-        <p>整合中国头部IP资源与全渠道出海能力，持有大量国际IP授权资源与优质国内厂牌的海外销售授权，构建覆盖全球的立体销售渠道网络。</p>
+        <h1><span data-i18n="hero_title_1">专注潮玩IP</span><br><span class="highlight"><span data-i18n="hero_title_2">全球商业化</span></span></h1>
+        <p data-i18n="hero_desc">整合中国头部IP资源与全渠道出海能力，持有大量国际IP授权资源与优质国内厂牌的海外销售授权，构建覆盖全球的立体销售渠道网络。</p>
         <div class="hero-buttons">
-          <a href="products.html" class="btn btn-primary">查看产品 →</a>
-          <a href="contact.html" class="btn btn-outline">合作咨询</a>
+          <a href="products.html" class="btn btn-primary" data-i18n="hero_btn_products">查看产品 →</a>
+          <a href="contact.html" class="btn btn-outline" data-i18n="hero_btn_contact">合作咨询</a>
         </div>
         <div class="hero-stats">
           <div class="hero-stat">
-            <h3>4<span>大品类</span></h3>
-            <p>盲盒 / 谷子 / 卡牌 / AI玩具</p>
+            <h3><span data-i18n="hero_stat1_title">4</span><span data-i18n="hero_stat1_unit">大品类</span></h3>
+            <p data-i18n="hero_stat1_desc">盲盒 / 谷子 / 卡牌 / AI玩具</p>
           </div>
           <div class="hero-stat">
-            <h3>40+<span>国语言</span></h3>
-            <p>AI产品海外语言覆盖</p>
+            <h3><span data-i18n="hero_stat2_title">40+</span><span data-i18n="hero_stat2_unit">国语言</span></h3>
+            <p data-i18n="hero_stat2_desc">AI产品海外语言覆盖</p>
           </div>
           <div class="hero-stat">
-            <h3>多<span>渠道</span></h3>
-            <p>B2B + 自营 + 线下</p>
+            <h3><span data-i18n="hero_stat3_title">多</span><span data-i18n="hero_stat3_unit">渠道</span></h3>
+            <p data-i18n="hero_stat3_desc">B2B + 自营 + 线下</p>
           </div>
         </div>
       </div>
@@ -64,18 +75,18 @@
         <div class="hero-card-stack">
           <div class="hero-card">
             <div class="hero-card-icon">🎮</div>
-            <h4>资深营销基因</h4>
-            <p>原游戏大厂团队 + 跨境千万级店铺操盘手，懂运营更懂出海</p>
+            <h4 data-i18n="hero_card1_title">资深营销基因</h4>
+            <p data-i18n="hero_card1_desc">原游戏大厂团队 + 跨境千万级店铺操盘手，懂运营更懂出海</p>
           </div>
           <div class="hero-card">
             <div class="hero-card-icon">🛒</div>
-            <h4>全渠道销售网络</h4>
-            <p>Alibaba国际站 / TikTok / TEMU / SHIEN / 线下门店</p>
+            <h4 data-i18n="hero_card2_title">全渠道销售网络</h4>
+            <p data-i18n="hero_card2_desc">Alibaba国际站 / TikTok / TEMU / SHIEN / 线下门店</p>
           </div>
           <div class="hero-card">
             <div class="hero-card-icon">📦</div>
-            <h4>海外仓布局</h4>
-            <p>阿联酋等海外仓体系，降低运营成本与出货周期</p>
+            <h4 data-i18n="hero_card3_title">海外仓布局</h4>
+            <p data-i18n="hero_card3_desc">阿联酋等海外仓体系，降低运营成本与出货周期</p>
           </div>
         </div>
       </div>
@@ -86,25 +97,25 @@
   <section class="section" id="positioning">
     <div class="container">
       <div class="section-header">
-        <div class="section-label">业务定位</div>
-        <h2>全球潮玩IP商业化伙伴</h2>
-        <p>专注整合中国头部IP资源与全渠道出海能力，提供潮玩供应链、IP授权与定制、出海营销等全链路服务。</p>
+        <div class="section-label" data-i18n="sec_positioning">业务定位</div>
+        <h2 data-i18n="sec_positioning_title">全球潮玩IP商业化伙伴</h2>
+        <p data-i18n="sec_positioning_desc">专注整合中国头部IP资源与全渠道出海能力，提供潮玩供应链、IP授权与定制、出海营销等全链路服务。</p>
       </div>
       <div class="services-grid">
         <div class="service-card">
           <div class="service-icon">🌊</div>
-          <h3>出海贸易</h3>
-          <p>整合全球渠道资源，覆盖欧美、东南亚、中东等增量市场，B2B供货与多平台自营并驾齐驱。</p>
+          <h3 data-i18n="pos_trade_title">出海贸易</h3>
+          <p data-i18n="pos_trade_desc">整合全球渠道资源，覆盖欧美、东南亚、中东等增量市场，B2B供货与多平台自营并驾齐驱。</p>
         </div>
         <div class="service-card">
           <div class="service-icon">🛍️</div>
-          <h3>跨境电商</h3>
-          <p>阿里巴巴国际站官方合作店铺，TikTok/TEMU/SHIEN等C端平台自营，多渠道快速出货。</p>
+          <h3 data-i18n="pos_ecom_title">跨境电商</h3>
+          <p data-i18n="pos_ecom_desc">阿里巴巴国际站官方合作店铺，TikTok/TEMU/SHIEN等C端平台自营，多渠道快速出货。</p>
         </div>
         <div class="service-card">
           <div class="service-icon">📢</div>
-          <h3>出海营销</h3>
-          <p>IP授权、社媒营销、海外展优先参展，快速反馈品牌方对应海外市场推广策略。</p>
+          <h3 data-i18n="pos_marketing_title">出海营销</h3>
+          <p data-i18n="pos_marketing_desc">IP授权、社媒营销、海外展优先参展，快速反馈品牌方对应海外市场推广策略。</p>
         </div>
       </div>
     </div>
@@ -114,19 +125,19 @@
   <section class="section features">
     <div class="container">
       <div class="section-header">
-        <div class="section-label">三大业务板块</div>
-        <h2>全方位业务矩阵</h2>
-        <p>覆盖潮玩供应链、影视动漫IP周边、IP授权与定制业务，构建多元化商业生态。</p>
+        <div class="section-label" data-i18n="sec_pillars">三大业务板块</div>
+        <h2 data-i18n="sec_pillars_title">全方位业务矩阵</h2>
+        <p data-i18n="sec_pillars_desc">覆盖潮玩供应链、影视动漫IP周边、IP授权与定制业务，构建多元化商业生态。</p>
       </div>
       <div class="products-grid" style="grid-template-columns: repeat(3, 1fr);">
         <div class="product-card">
           <div class="product-image p1">
             🎁
-            <span class="product-tag">核心业务</span>
+          <span class="product-tag" data-i18n="pillar1_tag">核心业务</span>
           </div>
           <div class="product-info">
-            <h3>潮玩供应链</h3>
-            <p>中国原创IP + 全球IP资源整合，提供盲盒类、毛绒、积木等全品类潮玩产品的设计、生产与供应链服务。</p>
+            <h3 data-i18n="pillar1_title">潮玩供应链</h3>
+            <p data-i18n="pillar1_desc">中国原创IP + 全球IP资源整合，提供盲盒类、毛绒、积木等全品类潮玩产品的设计、生产与供应链服务。</p>
             <div class="product-features">
               <span class="product-feature-tag">盲盒</span>
               <span class="product-feature-tag">毛绒</span>
@@ -138,11 +149,11 @@
         <div class="product-card">
           <div class="product-image p2">
             🎬
-            <span class="product-tag">热门赛道</span>
+          <span class="product-tag" data-i18n="pillar2_tag">热门赛道</span>
           </div>
           <div class="product-info">
-            <h3>影视与动漫IP周边（谷子）</h3>
-            <p>游戏、动漫等衍生产品，涵盖卡牌、吧唧、纪念票、立牌等全品类谷子产品，满足粉丝经济消费需求。</p>
+            <h3 data-i18n="pillar2_title">影视与动漫IP周边（谷子）</h3>
+            <p data-i18n="pillar2_desc">游戏、动漫等衍生产品，涵盖卡牌、吧唧、纪念票、立牌等全品类谷子产品，满足粉丝经济消费需求。</p>
             <div class="product-features">
               <span class="product-feature-tag">卡牌</span>
               <span class="product-feature-tag">徽章</span>
@@ -154,11 +165,11 @@
         <div class="product-card">
           <div class="product-image p3">
             🤝
-            <span class="product-tag">增值服务</span>
+          <span class="product-tag" data-i18n="pillar3_tag">增值服务</span>
           </div>
           <div class="product-info">
-            <h3>IP授权与定制业务</h3>
-            <p>提供IP授权服务与IP定制解决方案，帮助品牌方快速获取国际IP授权，打造差异化产品线。</p>
+            <h3 data-i18n="pillar3_title">IP授权与定制业务</h3>
+            <p data-i18n="pillar3_desc">提供IP授权服务与IP定制解决方案，帮助品牌方快速获取国际IP授权，打造差异化产品线。</p>
             <div class="product-features">
               <span class="product-feature-tag">IP授权</span>
               <span class="product-feature-tag">定制方案</span>
@@ -174,30 +185,30 @@
   <section class="section">
     <div class="container">
       <div class="section-header">
-        <div class="section-label">业务优势</div>
-        <h2>为什么选择潜鲸出海</h2>
-        <p>全品类IP资源池、出海平台深度合作、供应链快速响应，赋能品牌方全球拓展。</p>
+        <div class="section-label" data-i18n="sec_advantages">业务优势</div>
+        <h2 data-i18n="sec_advantages_title">为什么选择潜鲸出海</h2>
+        <p data-i18n="sec_advantages_desc">全品类IP资源池、出海平台深度合作、供应链快速响应，赋能品牌方全球拓展。</p>
       </div>
       <div class="features-grid">
         <div class="feature-item">
           <div class="feature-number" style="font-size:2rem;">🏪</div>
-          <h4>阿里国际站官方合作</h4>
-          <p>官方合作店铺，美国线下连锁店门店渠道，欧洲大卖合作商</p>
+          <h4 data-i18n="adv1_title">阿里国际站官方合作</h4>
+          <p data-i18n="adv1_desc">官方合作店铺，美国线下连锁店门店渠道，欧洲大卖合作商</p>
         </div>
         <div class="feature-item">
           <div class="feature-number" style="font-size:2rem;">🎨</div>
-          <h4>全品类IP资源池</h4>
-          <p>持有大量国际IP授权与优质国内厂牌海外销售授权</p>
+          <h4 data-i18n="adv2_title">全品类IP资源池</h4>
+          <p data-i18n="adv2_desc">持有大量国际IP授权与优质国内厂牌海外销售授权</p>
         </div>
         <div class="feature-item">
           <div class="feature-number" style="font-size:2rem;">🔗</div>
-          <h4>多平台深度合作</h4>
-          <p>Alibaba / TikTok / TEMU / SHIEN 多渠道覆盖</p>
+          <h4 data-i18n="adv3_title">多平台深度合作</h4>
+          <p data-i18n="adv3_desc">Alibaba / TikTok / TEMU / SHIEN 多渠道覆盖</p>
         </div>
         <div class="feature-item">
           <div class="feature-number" style="font-size:2rem;">📊</div>
-          <h4>数据驱动决策</h4>
-          <p>共享素材库与平台数据，提供海外消费趋势与爆品选品支持</p>
+          <h4 data-i18n="adv4_title">数据驱动决策</h4>
+          <p data-i18n="adv4_desc">共享素材库与平台数据，提供海外消费趋势与爆品选品支持</p>
         </div>
       </div>
     </div>
@@ -207,40 +218,40 @@
   <section class="section features">
     <div class="container">
       <div class="section-header">
-        <div class="section-label">解决痛点</div>
-        <h2>我们为您解决什么</h2>
-        <p>品牌方出海面临的种种难题，潜鲸出海提供一站式解决方案。</p>
+        <div class="section-label" data-i18n="sec_painpoints">解决痛点</div>
+        <h2 data-i18n="sec_painpoints_title">我们为您解决什么</h2>
+        <p data-i18n="sec_painpoints_desc">品牌方出海面临的种种难题，潜鲸出海提供一站式解决方案。</p>
       </div>
       <div class="values-grid">
         <div class="value-card">
           <div class="value-icon">🌍</div>
-          <h3>全球渠道变现</h3>
-          <p>覆盖欧美/东南亚/中东等增量市场，多渠道立体销售网络，帮助品牌快速触达全球消费者。</p>
+          <h3 data-i18n="pp1_title">全球渠道变现</h3>
+          <p data-i18n="pp1_desc">覆盖欧美/东南亚/中东等增量市场，多渠道立体销售网络，帮助品牌快速触达全球消费者。</p>
         </div>
         <div class="value-card">
           <div class="value-icon">🛡️</div>
-          <h3>降低出海风险</h3>
-          <p>直发国内仓即可，无需出海经验。合规护航，解决商家难授权、合规经营风险。</p>
+          <h3 data-i18n="pp2_title">降低出海风险</h3>
+          <p data-i18n="pp2_desc">直发国内仓即可，无需出海经验。合规护航，解决商家难授权、合规经营风险。</p>
         </div>
         <div class="value-card">
           <div class="value-icon">📈</div>
-          <h3>数据运营赋能</h3>
-          <p>提供海外消费趋势与渠道运营数据支持，解决品牌方难培养运营团队的问题。</p>
+          <h3 data-i18n="pp3_title">数据运营赋能</h3>
+          <p data-i18n="pp3_desc">提供海外消费趋势与渠道运营数据支持，解决品牌方难培养运营团队的问题。</p>
         </div>
         <div class="value-card">
           <div class="value-icon">🏷️</div>
-          <h3>独家IP供给</h3>
-          <p>优先获得爆款IP新品，货品齐全，国内主流产品都可供货，大部分可提供授权支持。</p>
+          <h3 data-i18n="pp4_title">独家IP供给</h3>
+          <p data-i18n="pp4_desc">优先获得爆款IP新品，货品齐全，国内主流产品都可供货，大部分可提供授权支持。</p>
         </div>
         <div class="value-card">
           <div class="value-icon">📦</div>
-          <h3>拿货灵活无忧</h3>
-          <p>出单后拿货，一箱起拿，部分产品可一件代发，无库存风险，轻资产运营。</p>
+          <h3 data-i18n="pp5_title">拿货灵活无忧</h3>
+          <p data-i18n="pp5_desc">出单后拿货，一箱起拿，部分产品可一件代发，无库存风险，轻资产运营。</p>
         </div>
         <div class="value-card">
           <div class="value-icon">🏗️</div>
-          <h3>海外仓布局</h3>
-          <p>26年阿联酋海外仓布局，降低海外运营和出货成本，提升物流时效。</p>
+          <h3 data-i18n="pp6_title">海外仓布局</h3>
+          <p data-i18n="pp6_desc">26年阿联酋海外仓布局，降低海外运营和出货成本，提升物流时效。</p>
         </div>
       </div>
     </div>
@@ -254,9 +265,9 @@
     </div>
     <div class="container">
       <div class="cta-content">
-        <h2>合作共赢，出海无界</h2>
-        <p>无论您是IP品牌方、跨境电商卖家还是渠道商，我们都能为您提供最优合作方案。</p>
-        <a href="contact.html" class="btn btn-primary">立即联系我们 →</a>
+        <h2 data-i18n="cta_index_title">合作共赢，出海无界</h2>
+        <p data-i18n="cta_index_desc">无论您是IP品牌方、跨境电商卖家还是渠道商，我们都能为您提供最优合作方案。</p>
+        <a href="contact.html" class="btn btn-primary" data-i18n="cta_index_btn">立即联系我们 →</a>
       </div>
     </div>
   </section>
@@ -270,32 +281,32 @@
             <div class="nav-logo-icon">🐋</div>
             <div class="nav-logo-text">KOKOX <span>TOYS</span></div>
           </a>
-          <p>深圳潜鲸出海国际贸易有限公司<br>专注潮玩IP全球商业化</p>
+          <p data-i18n-html="footer_brand_desc">深圳潜鲸出海国际贸易有限公司<br>专注潮玩IP全球商业化</p>
         </div>
         <div class="footer-col">
-          <h4>快速导航</h4>
+          <h4 data-i18n="footer_nav">快速导航</h4>
           <ul>
-            <li><a href="index.html">首页</a></li>
-            <li><a href="about.html">关于我们</a></li>
-            <li><a href="products.html">产品服务</a></li>
-            <li><a href="contact.html">联系我们</a></li>
+            <li><a href="index.html" data-i18n="nav_home">首页</a></li>
+            <li><a href="about.html" data-i18n="nav_about">关于我们</a></li>
+            <li><a href="products.html" data-i18n="nav_products">产品服务</a></li>
+            <li><a href="contact.html" data-i18n="nav_contact">联系我们</a></li>
           </ul>
         </div>
         <div class="footer-col">
-          <h4>业务板块</h4>
+          <h4 data-i18n="footer_biz">业务板块</h4>
           <ul>
-            <li><a href="products.html">潮玩供应链</a></li>
-            <li><a href="products.html">影视动漫周边</a></li>
-            <li><a href="products.html">IP授权与定制</a></li>
-            <li><a href="products.html">出海营销</a></li>
+            <li><a href="products.html" data-i18n="footer_biz1">潮玩供应链</a></li>
+            <li><a href="products.html" data-i18n="footer_biz2">影视动漫周边</a></li>
+            <li><a href="products.html" data-i18n="footer_biz3">IP授权与定制</a></li>
+            <li><a href="products.html" data-i18n="footer_biz4">出海营销</a></li>
           </ul>
         </div>
         <div class="footer-col">
-          <h4>联系方式</h4>
+          <h4 data-i18n="footer_contact">联系方式</h4>
           <ul>
             <li><a href="contact.html">Amiee.W</a></li>
             <li><a href="contact.html">17600294377</a></li>
-            <li><a href="contact.html">深圳市</a></li>
+            <li><a href="contact.html" data-i18n="footer_city">深圳市</a></li>
           </ul>
         </div>
       </div>
@@ -329,5 +340,6 @@
       });
     });
   </script>
+  <script src="i18n.js"></script>
 </body>
 </html>

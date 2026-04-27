@@ -1,6 +1,86 @@
 /* ===== KOKOX TOYS - Global Styles ===== */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap');
 
+/* ===== Language Switcher ===== */
+.lang-switcher {
+  position: relative;
+  margin-left: 1rem;
+  flex-shrink: 0;
+}
+.lang-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.8rem;
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 6px;
+  background: rgba(255,255,255,0.08);
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  backdrop-filter: blur(4px);
+}
+.lang-toggle:hover {
+  background: rgba(255,255,255,0.15);
+  border-color: rgba(255,255,255,0.3);
+}
+.lang-toggle svg {
+  width: 14px;
+  height: 14px;
+  transition: transform 0.2s;
+}
+.lang-dropdown {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  background: var(--primary);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 8px;
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-8px);
+  transition: all 0.2s;
+  min-width: 100%;
+  z-index: 1000;
+}
+.lang-dropdown.open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.lang-btn {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  color: rgba(255,255,255,0.7);
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-align: left;
+  border: none;
+  background: none;
+  cursor: pointer;
+  transition: all 0.15s;
+  white-space: nowrap;
+}
+.lang-btn:hover {
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+}
+.lang-btn.active {
+  color: var(--accent);
+  font-weight: 600;
+}
+/* Mobile nav language switcher */
+@media (max-width: 768px) {
+  .lang-switcher {
+    margin-left: auto;
+    margin-right: 1rem;
+  }
+}
+
 :root {
   --primary: #1a1a2e;
   --accent: #e94560;

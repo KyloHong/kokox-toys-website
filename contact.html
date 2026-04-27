@@ -17,11 +17,22 @@
         <div class="nav-logo-text">KOKOX <span>TOYS</span></div>
       </a>
       <ul class="nav-links" id="navLinks">
-        <li><a href="index.html">首页</a></li>
-        <li><a href="about.html">关于我们</a></li>
-        <li><a href="products.html">产品服务</a></li>
-        <li><a href="contact.html" class="active nav-cta">联系我们</a></li>
+        <li><a href="index.html" data-i18n="nav_home">首页</a></li>
+        <li><a href="about.html" data-i18n="nav_about">关于我们</a></li>
+        <li><a href="products.html" data-i18n="nav_products">产品服务</a></li>
+        <li><a href="contact.html" class="active nav-cta" data-i18n="nav_contact">联系我们</a></li>
       </ul>
+      <div class="lang-switcher">
+        <button class="lang-toggle" onclick="toggleLangDropdown()">
+          <span class="lang-current">中文</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="lang-dropdown">
+          <button class="lang-btn" data-lang="zh">中文</button>
+          <button class="lang-btn" data-lang="en">English</button>
+          <button class="lang-btn" data-lang="es">Español</button>
+        </div>
+      </div>
       <button class="nav-toggle" id="navToggle" aria-label="菜单">
         <span></span>
         <span></span>
@@ -37,8 +48,8 @@
       <div class="hero-shape"></div>
     </div>
     <div class="container">
-      <h1>联系我们</h1>
-      <p>合作共赢，出海无界 — 期待与您交流</p>
+      <h1 data-i18n="contact_banner_title">联系我们</h1>
+      <p data-i18n="contact_banner_desc">合作共赢，出海无界 — 期待与您交流</p>
     </div>
   </section>
 
@@ -47,13 +58,13 @@
     <div class="container">
       <div class="contact-grid">
         <div class="contact-info">
-          <h3>合作咨询</h3>
-          <p>无论您是IP品牌方寻求出海渠道、跨境电商卖家寻找供货资源、还是渠道商希望拓展产品线，我们都欢迎您的咨询。以下是我们的联系方式：</p>
+          <h3 data-i18n="contact_info_title">合作咨询</h3>
+          <p data-i18n="contact_info_desc">无论您是IP品牌方寻求出海渠道、跨境电商卖家寻找供货资源、还是渠道商希望拓展产品线，我们都欢迎您的咨询。以下是我们的联系方式：</p>
 
           <div class="contact-item">
             <div class="contact-icon">👤</div>
             <div>
-              <h4>商务联系人</h4>
+              <h4 data-i18n="contact_name">商务联系人</h4>
               <p>Amiee.W</p>
             </div>
           </div>
@@ -61,16 +72,16 @@
           <div class="contact-item">
             <div class="contact-icon">📱</div>
             <div>
-              <h4>联系电话</h4>
+              <h4 data-i18n="contact_phone">联系电话</h4>
               <p>17600294377</p>
-              <p>欢迎来电咨询合作事宜</p>
+              <p data-i18n="contact_phone_note">欢迎来电咨询合作事宜</p>
             </div>
           </div>
 
           <div class="contact-item">
             <div class="contact-icon">🏢</div>
             <div>
-              <h4>公司名称</h4>
+              <h4 data-i18n="contact_company">公司名称</h4>
               <p>深圳潜鲸出海国际贸易有限公司</p>
               <p>深圳市</p>
             </div>
@@ -79,24 +90,24 @@
           <div class="contact-item">
             <div class="contact-icon">🌐</div>
             <div>
-              <h4>品牌名称</h4>
+              <h4 data-i18n="contact_brand">品牌名称</h4>
               <p>KOKOX TOYS</p>
-              <p>专注潮玩IP全球商业化</p>
+              <p data-i18n="contact_brand_desc">专注潮玩IP全球商业化</p>
             </div>
           </div>
 
           <div class="contact-item">
             <div class="contact-icon">💬</div>
             <div>
-              <h4>合作渠道</h4>
-              <p>阿里巴巴国际站官方合作店铺</p>
-              <p>TikTok / TEMU / SHIEN 自营渠道</p>
+              <h4 data-i18n="contact_channels">合作渠道</h4>
+              <p data-i18n="contact_channels_alibaba">阿里巴巴国际站官方合作店铺</p>
+              <p data-i18n="contact_channels_stores">TikTok / TEMU / SHIEN 自营渠道</p>
             </div>
           </div>
         </div>
 
         <div class="contact-form">
-          <h3 style="font-size:1.25rem;font-weight:700;margin-bottom:1.5rem;">在线咨询</h3>
+          <h3 style="font-size:1.25rem;font-weight:700;margin-bottom:1.5rem;" data-i18n="contact_form_title">在线咨询</h3>
           <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
             <input type="hidden" name="access_key" value="373d7757-b5d4-4df8-83a9-b6d79f3f857d">
             <input type="hidden" name="subject" value="KOKOX TOYS 官网 - 新的合作咨询">
@@ -104,58 +115,58 @@
             <input type="checkbox" name="botcheck" style="display:none">
             <div class="form-row">
               <div class="form-group">
-                <label for="name">您的姓名 *</label>
-                <input type="text" id="name" name="name" placeholder="请输入姓名" required>
+                <label for="name" data-i18n="contact_label_name">您的姓名 *</label>
+                <input type="text" id="name" name="name" placeholder="请输入姓名" required data-i18n-placeholder="contact_ph_name">
               </div>
               <div class="form-group">
-                <label for="company">公司名称</label>
-                <input type="text" id="company" name="company" placeholder="请输入公司名称">
+                <label for="company" data-i18n="contact_label_company">公司名称</label>
+                <input type="text" id="company" name="company" placeholder="请输入公司名称" data-i18n-placeholder="contact_ph_company">
               </div>
             </div>
             <div class="form-row">
               <div class="form-group">
-                <label for="phone">联系电话 *</label>
-                <input type="tel" id="phone" name="phone" placeholder="请输入电话号码" required>
+                <label for="phone" data-i18n="contact_label_phone">联系电话 *</label>
+                <input type="tel" id="phone" name="phone" placeholder="请输入电话号码" required data-i18n-placeholder="contact_ph_phone">
               </div>
               <div class="form-group">
-                <label for="wechat">微信号</label>
-                <input type="text" id="wechat" name="wechat" placeholder="请输入微信号">
+                <label for="wechat" data-i18n="contact_label_wechat">微信号</label>
+                <input type="text" id="wechat" name="wechat" placeholder="请输入微信号" data-i18n-placeholder="contact_ph_wechat">
               </div>
             </div>
             <div class="form-group">
-              <label for="identity">您的身份</label>
+              <label for="identity" data-i18n="contact_label_identity">您的身份</label>
               <select id="identity" name="identity">
-                <option value="">请选择（可选）</option>
-                <option value="IP品牌方">IP品牌方</option>
-                <option value="跨境电商卖家">跨境电商卖家</option>
-                <option value="渠道商/分销商">渠道商/分销商</option>
-                <option value="电商平台商家">电商平台商家</option>
-                <option value="其他">其他</option>
+                <option value="" data-i18n="contact_ph_identity">请选择（可选）</option>
+                <option value="IP品牌方" data-i18n="contact_id_opt1">IP品牌方</option>
+                <option value="跨境电商卖家" data-i18n="contact_id_opt2">跨境电商卖家</option>
+                <option value="渠道商/分销商" data-i18n="contact_id_opt3">渠道商/分销商</option>
+                <option value="电商平台商家" data-i18n="contact_id_opt4">电商平台商家</option>
+                <option value="其他" data-i18n="contact_id_opt5">其他</option>
               </select>
             </div>
             <div class="form-group">
-              <label for="service">感兴趣的合作类型</label>
+              <label for="service" data-i18n="contact_label_service">感兴趣的合作类型</label>
               <select id="service" name="service">
-                <option value="">请选择合作类型</option>
-                <option value="B2B供货合作">B2B供货合作</option>
-                <option value="IP授权合作">IP授权合作</option>
-                <option value="盲盒/谷子/卡牌产品">盲盒/谷子/卡牌产品</option>
-                <option value="AI玩具产品">AI玩具产品</option>
-                <option value="IP定制解决方案">IP定制解决方案</option>
-                <option value="出海营销合作">出海营销合作</option>
-                <option value="全品类合作">全品类合作</option>
+                <option value="" data-i18n="contact_ph_service">请选择合作类型</option>
+                <option value="B2B供货合作" data-i18n="contact_svc_opt1">B2B供货合作</option>
+                <option value="IP授权合作" data-i18n="contact_svc_opt2">IP授权合作</option>
+                <option value="盲盒/谷子/卡牌产品" data-i18n="contact_svc_opt3">盲盒/谷子/卡牌产品</option>
+                <option value="AI玩具产品" data-i18n="contact_svc_opt4">AI玩具产品</option>
+                <option value="IP定制解决方案" data-i18n="contact_svc_opt5">IP定制解决方案</option>
+                <option value="出海营销合作" data-i18n="contact_svc_opt6">出海营销合作</option>
+                <option value="全品类合作" data-i18n="contact_svc_opt7">全品类合作</option>
               </select>
             </div>
             <div class="form-group">
-              <label for="message">合作需求描述 *</label>
-              <textarea id="message" name="message" placeholder="请描述您的具体需求，如感兴趣的IP/品类、目标市场、预计合作规模等" required></textarea>
+              <label for="message" data-i18n="contact_label_message">合作需求描述 *</label>
+              <textarea id="message" name="message" placeholder="请描述您的具体需求，如感兴趣的IP/品类、目标市场、预计合作规模等" required data-i18n-placeholder="contact_ph_message"></textarea>
             </div>
-            <button type="submit" id="submitBtn" class="btn btn-primary form-submit">提交咨询 →</button>
+            <button type="submit" id="submitBtn" class="btn btn-primary form-submit" data-i18n="contact_btn">提交咨询 →</button>
           </form>
           <div id="formSuccess" style="display:none;text-align:center;padding:2rem 0;">
             <div style="font-size:3rem;margin-bottom:1rem;">✅</div>
-            <h3 style="margin-bottom:0.5rem;">提交成功！</h3>
-            <p style="color:var(--gray);">感谢您的咨询，我们将在24小时内与您联系。</p>
+            <h3 style="margin-bottom:0.5rem;" data-i18n="contact_success_title">提交成功！</h3>
+            <p style="color:var(--gray);" data-i18n="contact_success_p1">感谢您的咨询，我们将在24小时内与您联系。</p>
             <p style="color:var(--gray);margin-top:0.5rem;">紧急事务请直接致电：<strong>17600294377（Amiee.W）</strong></p>
           </div>
         </div>
@@ -167,29 +178,29 @@
   <section class="section features">
     <div class="container">
       <div class="section-header">
-        <div class="section-label">合作对象</div>
-        <h2>我们期待与谁合作</h2>
+        <div class="section-label" data-i18n="contact_target_label">合作对象</div>
+        <h2 data-i18n="contact_target_title">我们期待与谁合作</h2>
       </div>
       <div class="services-grid" style="grid-template-columns: repeat(2, 1fr);">
         <div class="service-card">
           <div class="service-icon">🎨</div>
-          <h3>IP品牌方</h3>
-          <p>如果您拥有原创IP或已获得IP授权，我们可提供全球渠道分销、海外营销推广、供应链支持，帮助您的IP快速触达海外消费者。</p>
+          <h3 data-i18n="target1_title">IP品牌方</h3>
+          <p data-i18n="target1_desc">如果您拥有原创IP或已获得IP授权，我们可提供全球渠道分销、海外营销推广、供应链支持，帮助您的IP快速触达海外消费者。</p>
         </div>
         <div class="service-card">
           <div class="service-icon">🛒</div>
-          <h3>跨境电商卖家</h3>
-          <p>亚马逊、TikTok、TEMU、SHIEN等平台卖家，我们可提供B2B供货、一件代发、授权支持，出单后拿货，零库存风险。</p>
+          <h3 data-i18n="target2_title">跨境电商卖家</h3>
+          <p data-i18n="target2_desc">亚马逊、TikTok、TEMU、SHIEN等平台卖家，我们可提供B2B供货、一件代发、授权支持，出单后拿货，零库存风险。</p>
         </div>
         <div class="service-card">
           <div class="service-icon">🏪</div>
-          <h3>渠道商/分销商</h3>
-          <p>海外线下连锁店、分销商、大卖合作方，我们可提供稳定供货、海外仓支持、授权保障，共同开拓当地市场。</p>
+          <h3 data-i18n="target3_title">渠道商/分销商</h3>
+          <p data-i18n="target3_desc">海外线下连锁店、分销商、大卖合作方，我们可提供稳定供货、海外仓支持、授权保障，共同开拓当地市场。</p>
         </div>
         <div class="service-card">
           <div class="service-icon">🤝</div>
-          <h3>战略合作伙伴</h3>
-          <p>IP授权方、营销机构、物流服务商等，欢迎洽谈深度战略合作，共同构建潮玩出海生态。</p>
+          <h3 data-i18n="target4_title">战略合作伙伴</h3>
+          <p data-i18n="target4_desc">IP授权方、营销机构、物流服务商等，欢迎洽谈深度战略合作，共同构建潮玩出海生态。</p>
         </div>
       </div>
     </div>
@@ -199,29 +210,29 @@
   <section class="section">
     <div class="container">
       <div class="section-header">
-        <div class="section-label">常见问题</div>
-        <h2>合作FAQ</h2>
+        <div class="section-label" data-i18n="contact_faq_label">常见问题</div>
+        <h2 data-i18n="contact_faq_title">合作FAQ</h2>
       </div>
       <div class="services-grid" style="grid-template-columns: repeat(2, 1fr);">
         <div class="service-card">
           <div class="service-icon">❓</div>
-          <h3>最小起订量是多少？</h3>
-          <p>一箱起拿，出单后拿货。部分产品支持一件代发，零库存风险，非常适合中小卖家试水新市场。</p>
+          <h3 data-i18n="faq1_title">最小起订量是多少？</h3>
+          <p data-i18n="faq1_desc">一箱起拿，出单后拿货。部分产品支持一件代发，零库存风险，非常适合中小卖家试水新市场。</p>
         </div>
         <div class="service-card">
           <div class="service-icon">❓</div>
-          <h3>是否提供IP授权支持？</h3>
-          <p>是的，我们持有大量国际IP授权资源，大部分产品可提供授权支持。可报备上跨境电商平台，合规经营。</p>
+          <h3 data-i18n="faq2_title">是否提供IP授权支持？</h3>
+          <p data-i18n="faq2_desc">是的，我们持有大量国际IP授权资源，大部分产品可提供授权支持。可报备上跨境电商平台，合规经营。</p>
         </div>
         <div class="service-card">
           <div class="service-icon">❓</div>
-          <h3>支持哪些出货渠道？</h3>
-          <p>B2B供货给平台商家 + C端自营（TikTok/TEMU/SHIEN）+ 海外线下门店 + 海外仓（阿联酋），多渠道灵活选择。</p>
+          <h3 data-i18n="faq3_title">支持哪些出货渠道？</h3>
+          <p data-i18n="faq3_desc">B2B供货给平台商家 + C端自营（TikTok/TEMU/SHIEN）+ 海外线下门店 + 海外仓（阿联酋），多渠道灵活选择。</p>
         </div>
         <div class="service-card">
           <div class="service-icon">❓</div>
-          <h3>AI玩具是否支持出口？</h3>
-          <p>支持。AI毛绒玩具支持40+国语言，搭载海外版ChatGPT/Google大模型，专为出海市场设计。</p>
+          <h3 data-i18n="faq4_title">AI玩具是否支持出口？</h3>
+          <p data-i18n="faq4_desc">支持。AI毛绒玩具支持40+国语言，搭载海外版ChatGPT/Google大模型，专为出海市场设计。</p>
         </div>
       </div>
     </div>
@@ -235,9 +246,9 @@
     </div>
     <div class="container">
       <div class="cta-content">
-        <h2>直接联系我们</h2>
-        <p>商务联系人：Amiee.W | 电话：17600294377</p>
-        <a href="tel:17600294377" class="btn btn-primary">拨打电话 →</a>
+        <h2 data-i18n="cta_contact_title">直接联系我们</h2>
+        <p data-i18n="cta_contact_desc">商务联系人：Amiee.W | 电话：17600294377</p>
+        <a href="tel:17600294377" class="btn btn-primary" data-i18n="cta_contact_btn">拨打电话 →</a>
       </div>
     </div>
   </section>
@@ -251,24 +262,24 @@
             <div class="nav-logo-icon">🐋</div>
             <div class="nav-logo-text">KOKOX <span>TOYS</span></div>
           </a>
-          <p>深圳潜鲸出海国际贸易有限公司<br>专注潮玩IP全球商业化</p>
+          <p data-i18n-html="footer_brand_desc">深圳潜鲸出海国际贸易有限公司<br>专注潮玩IP全球商业化</p>
         </div>
         <div class="footer-col">
-          <h4>快速导航</h4>
+          <h4 data-i18n="footer_nav">快速导航</h4>
           <ul>
-            <li><a href="index.html">首页</a></li>
-            <li><a href="about.html">关于我们</a></li>
-            <li><a href="products.html">产品服务</a></li>
-            <li><a href="contact.html">联系我们</a></li>
+            <li><a href="index.html" data-i18n="nav_home">首页</a></li>
+            <li><a href="about.html" data-i18n="nav_about">关于我们</a></li>
+            <li><a href="products.html" data-i18n="nav_products">产品服务</a></li>
+            <li><a href="contact.html" data-i18n="nav_contact">联系我们</a></li>
           </ul>
         </div>
         <div class="footer-col">
-          <h4>业务板块</h4>
+          <h4 data-i18n="footer_biz">业务板块</h4>
           <ul>
-            <li><a href="products.html">潮玩供应链</a></li>
-            <li><a href="products.html">影视动漫周边</a></li>
-            <li><a href="products.html">IP授权与定制</a></li>
-            <li><a href="products.html">出海营销</a></li>
+            <li><a href="products.html" data-i18n="footer_biz1">潮玩供应链</a></li>
+            <li><a href="products.html" data-i18n="footer_biz2">影视动漫周边</a></li>
+            <li><a href="products.html" data-i18n="footer_biz3">IP授权与定制</a></li>
+            <li><a href="products.html" data-i18n="footer_biz4">出海营销</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -348,5 +359,6 @@
       });
     });
   </script>
+  <script src="i18n.js"></script>
 </body>
 </html>
