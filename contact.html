@@ -221,26 +221,42 @@
         <div class="section-label" data-i18n="contact_faq_label">常见问题</div>
         <h2 data-i18n="contact_faq_title">合作FAQ</h2>
       </div>
-      <div class="services-grid" style="grid-template-columns: repeat(2, 1fr);">
-        <div class="service-card">
-          <div class="service-icon">❓</div>
-          <h3 data-i18n="faq1_title">最小起订量是多少？</h3>
-          <p data-i18n="faq1_desc">一箱起拿，出单后拿货。部分产品支持一件代发，零库存风险，非常适合中小卖家试水新市场。</p>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span data-i18n="faq1_title">最小起订量是多少？</span>
+            <span class="faq-arrow">+</span>
+          </button>
+          <div class="faq-answer">
+            <p data-i18n="faq1_desc">一箱起拿，出单后拿货。部分产品支持一件代发，零库存风险，非常适合中小卖家试水新市场。</p>
+          </div>
         </div>
-        <div class="service-card">
-          <div class="service-icon">❓</div>
-          <h3 data-i18n="faq2_title">是否提供IP授权支持？</h3>
-          <p data-i18n="faq2_desc">是的，我们持有大量国际IP授权资源，大部分产品可提供授权支持。可报备上跨境电商平台，合规经营。</p>
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span data-i18n="faq2_title">是否提供IP授权支持？</span>
+            <span class="faq-arrow">+</span>
+          </button>
+          <div class="faq-answer">
+            <p data-i18n="faq2_desc">是的，我们持有大量国际IP授权资源，大部分产品可提供授权支持。可报备上跨境电商平台，合规经营。</p>
+          </div>
         </div>
-        <div class="service-card">
-          <div class="service-icon">❓</div>
-          <h3 data-i18n="faq3_title">支持哪些出货渠道？</h3>
-          <p data-i18n="faq3_desc">B2B供货给平台商家 + C端自营（TikTok/TEMU/SHIEN）+ 海外线下门店 + 海外仓（阿联酋），多渠道灵活选择。</p>
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span data-i18n="faq3_title">支持哪些出货渠道？</span>
+            <span class="faq-arrow">+</span>
+          </button>
+          <div class="faq-answer">
+            <p data-i18n="faq3_desc">B2B供货给平台商家 + C端自营（TikTok/TEMU/SHIEN）+ 海外线下门店 + 海外仓（阿联酋），多渠道灵活选择。</p>
+          </div>
         </div>
-        <div class="service-card">
-          <div class="service-icon">❓</div>
-          <h3 data-i18n="faq4_title">AI玩具是否支持出口？</h3>
-          <p data-i18n="faq4_desc">支持。AI毛绒玩具支持40+国语言，搭载海外版ChatGPT/Google大模型，专为出海市场设计。</p>
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span data-i18n="faq4_title">AI玩具是否支持出口？</span>
+            <span class="faq-arrow">+</span>
+          </button>
+          <div class="faq-answer">
+            <p data-i18n="faq4_desc">支持。AI毛绒玩具支持40+国语言，搭载海外版ChatGPT/Google大模型，专为出海市场设计。</p>
+          </div>
         </div>
       </div>
     </div>
@@ -317,6 +333,16 @@
     navToggle.addEventListener('click', () => {
       navLinks.classList.toggle('active');
     });
+
+    // FAQ 手风琴
+    function toggleFaq(btn) {
+      const item = btn.parentElement;
+      const isOpen = item.classList.contains('active');
+      // 关闭所有
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+      // 如果之前没打开，则打开当前
+      if (!isOpen) item.classList.add('active');
+    }
 
     // AJAX 表单提交 → 自动发邮件，用户无感
     const form = document.getElementById('contactForm');
