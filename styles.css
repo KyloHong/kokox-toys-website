@@ -1,5 +1,5 @@
 /* ===== KOKOX TOYS - Global Styles ===== */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+SC:wght@300;400;500;600;700&family=Noto+Sans+Arabic:wght@300;400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;600;700&display=swap');
 
 /* ===== Language Switcher (inline with nav) ===== */
 .lang-switcher {
@@ -1558,13 +1558,60 @@ body {
   .hero-content h1 {
     font-size: 1.85rem;
   }
-  
+
   .hero-stats {
     flex-direction: column;
     align-items: center;
   }
-  
+
   .process-grid {
     grid-template-columns: 1fr;
   }
+}
+
+/* ===== 多语言字体 ===== */
+[lang="ar"] body,
+[lang="ar"] {
+  font-family: 'Noto Sans Arabic', 'Inter', sans-serif;
+}
+[lang="ko"] body,
+[lang="ko"] {
+  font-family: 'Noto Sans KR', 'Inter', sans-serif;
+}
+[lang="ja"] body,
+[lang="ja"] {
+  font-family: 'Noto Sans JP', 'Inter', sans-serif;
+}
+
+/* ===== 阿拉伯语 RTL 支持 ===== */
+[dir="rtl"] .nav-links {
+  direction: rtl;
+}
+[dir="rtl"] .footer-grid {
+  direction: rtl;
+}
+[dir="rtl"] .lang-dropdown {
+  left: auto;
+  right: 0;
+}
+[dir="rtl"] .faq-arrow {
+  transform: none;
+}
+[dir="rtl"] .faq-item.active .faq-arrow {
+  transform: rotate(45deg);
+}
+[dir="rtl"] .hero-buttons {
+  direction: rtl;
+}
+[dir="rtl"] .product-feature-tag {
+  direction: rtl;
+}
+[dir="rtl"] .form-group input,
+[dir="rtl"] .form-group textarea,
+[dir="rtl"] .form-group select {
+  text-align: right;
+}
+[dir="rtl"] .form-group input::placeholder,
+[dir="rtl"] .form-group textarea::placeholder {
+  text-align: right;
 }
