@@ -105,11 +105,11 @@ const I18N = {
 
   // ============ 关于我们 ============
   'about_banner_title': { zh: '关于我们', en: 'About Us', es: 'Sobre Nosotros' },
-  'about_banner_desc': { zh: '深圳潜鲸出海国际贸易有限公司 — 全球潮玩IP商业化伙伴', en: 'Shenzhen Qianjing ChuHai Trading Co., Ltd. — Global Art Toy IP Commercialization Partner', es: 'Shenzhen Qianjing ChuHai Trading Co., Ltd. — Socio de Comercialización IP Global' },
+  'about_banner_desc': { zh: '潜鲸出海国际贸易有限公司 — 全球潮玩IP商业化伙伴', en: 'Shenzhen Qianjing ChuHai Trading Co., Ltd. — Global Art Toy IP Commercialization Partner', es: 'Shenzhen Qianjing ChuHai Trading Co., Ltd. — Socio de Comercialización IP Global' },
   'about_intro_label': { zh: '公司简介', en: 'Company Profile', es: 'Perfil de la Empresa' },
   'about_intro_title': { zh: '潜鲸出海 — 让中国IP走向世界', en: 'KOKOX TOYS — Bringing Chinese IP to the World', es: 'KOKOX TOYS — Llevando IP China al Mundo' },
   'about_intro_p1': {
-    zh: '深圳潜鲸出海国际贸易有限公司（KOKOX TOYS）是一家专注于潮玩IP全球商业化的综合性贸易企业。我们持有大量国际IP授权资源与优质国内厂牌的海外销售授权，依托资深营销基因，构建了覆盖全球的立体销售渠道网络。',
+    zh: '潜鲸出海国际贸易有限公司（KOKOX TOYS）是一家专注于潮玩IP全球商业化的综合性贸易企业。我们持有大量国际IP授权资源与优质国内厂牌的海外销售授权，依托资深营销基因，构建了覆盖全球的立体销售渠道网络。',
     en: 'KOKOX TOYS is a comprehensive trading company focused on the global commercialization of art toy IPs. We hold extensive international IP licensing and premium domestic brand distribution rights, building a global multi-channel sales network backed by seasoned marketing expertise.',
     es: 'KOKOX TOYS es una empresa comercial integral enfocada en la comercialización global de IP de juguetes de arte. Contamos con amplias licencias IP internacionales y derechos de distribución premium, construyendo una red de ventas global con experiencia en marketing.'
   },
@@ -302,7 +302,7 @@ const I18N = {
   'footer_nav': { zh: '快速导航', en: 'Quick Links', es: 'Enlaces Rápidos' },
   'footer_biz': { zh: '业务板块', en: 'Business', es: 'Negocio' },
   'footer_contact': { zh: '联系方式', en: 'Contact', es: 'Contacto' },
-  'footer_brand_desc': { zh: '深圳潜鲸出海国际贸易有限公司<br>专注潮玩IP全球商业化', en: 'Shenzhen Qianjing ChuHai Trading Co., Ltd.<br>Global Art Toy IP Commercialization', es: 'Shenzhen Qianjing ChuHai Trading Co., Ltd.<br>Comercialización IP Global' },
+  'footer_brand_desc': { zh: '潜鲸出海国际贸易有限公司<br>专注潮玩IP全球商业化', en: 'Shenzhen Qianjing ChuHai Trading Co., Ltd.<br>Global Art Toy IP Commercialization', es: 'Shenzhen Qianjing ChuHai Trading Co., Ltd.<br>Comercialización IP Global' },
   'footer_biz1': { zh: '潮玩供应链', en: 'Art Toy Supply Chain', es: 'Cadena de Suministro' },
   'footer_biz2': { zh: '影视动漫周边', en: 'Entertainment Merchandise', es: 'Merchandise Entretenimiento' },
   'footer_biz3': { zh: 'IP授权与定制', en: 'IP Licensing', es: 'Licenciamiento IP' },

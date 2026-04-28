@@ -1176,6 +1176,30 @@ body {
   background: var(--white);
   color: var(--primary);
   outline: none;
+  box-sizing: border-box;
+}
+
+/* 去掉 text/tel/email 输入框的下拉箭头 */
+.form-group input[type="text"],
+.form-group input[type="tel"],
+.form-group input[type="email"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+/* select 高度与 input 一致 */
+.form-group select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23666' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  padding-right: 2.5rem;
+  cursor: pointer;
+  height: auto;
+  line-height: 1.5;
 }
 
 .form-group input:focus,
